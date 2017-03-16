@@ -4,7 +4,9 @@
   "description": "A react based Todo app",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --reporter spec test/*.js",
+    "lint": "node_modules/.bin/eslint webpack.config.* src tools",
+    "test": "npm run lint && npm run testonly",
+    "testonly": "mocha --reporter spec test/*.js",
     "start": "node server.js"
   },
   "author": "Harold Shinsato",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.17.1",
     "mocha": "^3.0.2"
   }
 }

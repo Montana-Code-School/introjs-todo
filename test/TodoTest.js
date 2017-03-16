@@ -1,12 +1,21 @@
 var assert = require('chai').assert;
+var expect = require('chai').expect;
+var Todo = require('../models/todo');
 
 describe("Todo", function() {
-  it("can test", function() {
+  it("Can create a todo", function() {
     //Arrange
+    var aTodo = new Todo();
     //Act
     //Assert
-    //assert.equal(actual, expected);
-    assert.equal(false, false);
+    assert.isOk(aTodo);
   });
-
+  xit("has error without a name", function(done) {
+    //Arrange
+    var aTodo = new Todo();
+    aTodo.validate(function(err) {
+      expect(err.errors.name).to.exist;
+      done();
+    });
+  });
 });

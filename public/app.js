@@ -15,14 +15,14 @@ var TodoList = React.createClass({
             {t.dueDate}
             <button className="btn btn-warning"
               onClick={self.props.handleDelete.bind(this, t._id)}>
-              delete 
+              delete
             </button>
 
           </div>
         </div>
         )
     })
-    return ( 
+    return (
       <div>
         <p> { todosList } </p>
       </div>
@@ -72,7 +72,7 @@ var TodoForm = React.createClass({
       <div>
         <form onSubmit={this.handleForm} method="" role="form">
           <legend>Add New Todo</legend>
-        
+
           <div className="form-group">
             <input onChange={this.handleNameChange} value={this.state.name} type="text" className="form-control" id="" placeholder="name"/>
           </div>
@@ -84,7 +84,7 @@ var TodoForm = React.createClass({
           <div className="form-group">
             <input onChange={this.handleDueDateChange} value={this.state.dueDate} type="date" className="form-control" id="" placeholder="due date"/>
           </div>
-        
+
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
@@ -137,14 +137,14 @@ var App = React.createClass({
     this.loadTodosFromServer();
   },
   render: function() {
-    return ( 
+    return (
       <div>
         <h3> Hello World! </h3>
-        <TodoList handleDelete={ this.handleDelete } 
+        <TodoList handleDelete={ this.handleDelete }
                   todos={ this.state.todos } />
         <TodoForm handleSubmit={this.handleSubmit}/>
       </div>
-      )
+    )
   }
 });
 
